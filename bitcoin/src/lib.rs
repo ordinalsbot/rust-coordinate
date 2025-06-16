@@ -120,8 +120,6 @@ pub mod taproot;
 #[allow(unused)]
 #[cfg(feature = "std")]
 use std::error::Error as StdError;
-#[cfg(feature = "std")]
-use std::io;
 
 #[allow(unused)]
 #[cfg(not(feature = "std"))]
