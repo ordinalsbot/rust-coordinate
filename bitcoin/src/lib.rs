@@ -227,3 +227,15 @@ mod bench {
         fn write_fmt(&mut self, _: Arguments) -> Result<()> { Ok(()) }
     }
 }
+
+// ─── export publicly to avoid ord build issues
+
+#[cfg(feature = "std")]
+pub mod io {
+    pub use std::io::*;
+}
+
+#[cfg(not(feature = "std"))]
+pub mod io {
+    pub use crate::io_extras::*;
+}
